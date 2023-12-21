@@ -32,9 +32,13 @@ class Practice1Test {
         int[] nums3 = {1, 7, 11, 15};
         int target3 = 9;
 
+        int[] nums4 = {4, 3, 15, 5};
+        int target4 = 8;
+
         assertEquals("[0, 1]", Arrays.toString(Practice1.twoSum(nums1, target1)) );
         assertEquals("[1, 2]", Arrays.toString(Practice1.twoSum(nums2, target2)) );
         assertEquals("[0, 0]", Arrays.toString(Practice1.twoSum(nums3, target3)) );
+        assertEquals("[1, 3]", Arrays.toString(Practice1.twoSum(nums4, target4)) );
     }
 
 }
