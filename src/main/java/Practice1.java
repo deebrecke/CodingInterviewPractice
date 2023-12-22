@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -90,18 +91,25 @@ public class Practice1 {
     /*
         This approach passed all test cases given plus a few others I considered
         But there was an edge case I hadn't considered before submitting it which threw a runtime
-        error. I tried refactoring it and adding that edge case to my test base and it passed
+        error. I tried refactoring it and adding that edge case to my test base and it passed.
+
+        This test should not have passed. Strings cannot be compared using ==. I fixed the code to use
+        the .equals() method, but now there's a new edge case to consider. To use this approach, I would
+        need to use a nested for-loop, but that's too high of a time complexity.
+
      */
 
     /**
-     * This function finds the longest common prefix string amongst an array of strings.
+     * This function should find the longest common prefix string amongst an array of strings.
+     * This first approach left out some edge cases. In order to use this approach and consider
+     * those edge cases, the time complexity would be too high
      *
      * @param strs String array to check
      * @return String of the longest prefix or empty String ("") if no common prefix exists
      */
 
-    public static String longestCommonPrefix(String[] strs) {
-        if(strs.length == 0 || strs[0] ==""){
+    public static String longestCommonPrefixFirstApproach(String[] strs) {
+        if(strs.length == 0 || strs[0].equals("")){
             return "";
         }
         if(strs.length == 1){
@@ -110,11 +118,55 @@ public class Practice1 {
         String longestPrefix = "";
         String firstWord = strs[0];
         int index = 0;
+
         for (int i = 1; i < strs.length; i++) {
             String word = strs[i];
             if(firstWord.charAt(index) == word.charAt(index)){
                 longestPrefix += word.charAt(index);
                 index ++;
+            }
+        }
+        return longestPrefix;
+    }
+
+    /**
+     * This function finds the longest common prefix string amongst an array of strings.
+     *
+     * By sorting the array (arrays.sort will sort a string array alphabetically) and
+     * only comparing the first and last word, we can save time complexity since any word
+     * alphabetically between the first and last one will not contain less of the same characters.
+     *
+     * @param strs String array to check
+     * @return String of the longest prefix or empty String ("") if no common prefix exists
+     */
+    public static String longestCommonPrefix(String[] strs) {
+        //quick checks for constant time cases:
+        if(strs.length == 0 || strs[0].equals("")){
+            return "";
+        }
+        if(strs.length == 1){
+            return strs[0];
+        }
+        //assign array to temp array so that original array doesn't change due to
+        //arrays being passed by reference
+        String[] temp = strs;
+        Arrays.sort(temp);
+
+        //local variables to make code easier to read
+        String longestPrefix = "";
+        String firstWord = temp[0];
+        int lastIndex = temp.length -1;
+        String lastWord = temp[lastIndex];
+        int checkWord = Math.min(firstWord.length(), lastWord.length());
+
+        //check each character in order, if it is the same, add it
+        for (int i = 0; i < checkWord; i++) {
+            if(firstWord.charAt(i) == lastWord.charAt(i)){
+                longestPrefix+= firstWord.charAt(i);
+            }
+            //otherwise, stop and return what we have so far
+            else{
+                return longestPrefix;
             }
         }
         return longestPrefix;
