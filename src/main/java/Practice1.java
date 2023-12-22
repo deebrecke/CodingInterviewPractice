@@ -87,6 +87,12 @@ public class Practice1 {
             return solution;
     }
 
+    /*
+        This approach passed all test cases given plus a few others I considered
+        But there was an edge case I hadn't considered before submitting it which threw a runtime
+        error. I tried refactoring it and adding that edge case to my test base and it passed
+     */
+
     /**
      * This function finds the longest common prefix string amongst an array of strings.
      *
@@ -95,7 +101,7 @@ public class Practice1 {
      */
 
     public static String longestCommonPrefix(String[] strs) {
-        if(strs.length == 0){
+        if(strs.length == 0 || strs[0] ==""){
             return "";
         }
         if(strs.length == 1){

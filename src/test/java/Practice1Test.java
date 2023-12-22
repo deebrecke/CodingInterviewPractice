@@ -47,14 +47,13 @@ class Practice1Test {
         String[] array2 = {"dog","racecar","car"};
         String[] array3 = {"apple"};
         String[] array4 = {""};
+        String[] array5 = {"", "flea"};
 
         assertEquals("fl", Practice1.longestCommonPrefix(array1));
         assertEquals("", Practice1.longestCommonPrefix(array2));
         assertEquals("apple", Practice1.longestCommonPrefix(array3));
         assertEquals("", Practice1.longestCommonPrefix(array4));
-
-
-
+        assertEquals("", Practice1.longestCommonPrefix(array5));
 
     }
 
