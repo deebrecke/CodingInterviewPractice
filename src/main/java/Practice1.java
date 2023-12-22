@@ -19,7 +19,7 @@ public class Practice1 {
             forward/= 10;
         }
         return backward == x;
-    }
+    }//end of isPalendrome method
 
     /*
         Given an array of integers nums and an integer target, return indices of the two numbers
@@ -86,5 +86,32 @@ public class Practice1 {
         //(I added this caveat even though the problem specified "Exactly One Solution")
             return solution;
     }
-}
+
+    /**
+     * This function finds the longest common prefix string amongst an array of strings.
+     *
+     * @param strs String array to check
+     * @return String of the longest prefix or empty String ("") if no common prefix exists
+     */
+
+    public static String longestCommonPrefix(String[] strs) {
+        if(strs.length == 0){
+            return "";
+        }
+        if(strs.length == 1){
+            return strs[0];
+        }
+        String longestPrefix = "";
+        String firstWord = strs[0];
+        int index = 0;
+        for (int i = 1; i < strs.length; i++) {
+            String word = strs[i];
+            if(firstWord.charAt(index) == word.charAt(index)){
+                longestPrefix += word.charAt(index);
+                index ++;
+            }
+        }
+        return longestPrefix;
+    }
+}//end of Practice1 class
 

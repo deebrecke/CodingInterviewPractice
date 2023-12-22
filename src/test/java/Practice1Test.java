@@ -41,4 +41,21 @@ class Practice1Test {
         assertEquals("[1, 3]", Arrays.toString(Practice1.twoSum(nums4, target4)) );
     }
 
+    @Test
+    void longestPrefixTest(){
+        String[] array1 = {"flower","flow","flight"};
+        String[] array2 = {"dog","racecar","car"};
+        String[] array3 = {"apple"};
+        String[] array4 = {""};
+
+        assertEquals("fl", Practice1.longestCommonPrefix(array1));
+        assertEquals("", Practice1.longestCommonPrefix(array2));
+        assertEquals("apple", Practice1.longestCommonPrefix(array3));
+        assertEquals("", Practice1.longestCommonPrefix(array4));
+
+
+
+
+    }
+
 }
