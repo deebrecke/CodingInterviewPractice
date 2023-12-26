@@ -171,5 +171,26 @@ public class Practice1 {
         }
         return longestPrefix;
     }
+
+    /**
+     * LeetCode "Easy" problem # 1929: Concatenation of Array
+     *
+     * Given an integer array nums of length "initialLength", this method creates an array "concatenated" of length
+     * 2*initialLength where the input array is concatenated to the end of itself.
+     *
+     * @param nums integer input array
+     * @return integer output array
+     */
+    public static int[] getConcatenation(int[] nums) {
+        int initialLength = nums.length;
+        int[] concatenated = new int[2 * initialLength];
+        //iterate through once
+        for (int i = 0; i < nums.length; i++) {
+            //put same int in both spots in the new array
+            concatenated[i] = nums[i];
+            concatenated[i + initialLength] = nums[i];
+        }
+        return concatenated;
+    }
 }//end of Practice1 class
 

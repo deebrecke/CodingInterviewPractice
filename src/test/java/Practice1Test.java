@@ -60,4 +60,17 @@ class Practice1Test {
         assertEquals("apple", Practice1.longestCommonPrefix(array7));
     }
 
+    @Test
+    void getConcatTest(){
+        int[] input1 = {1,2,1};
+        int[] input2 = {1,3,2,1};
+        int[] input3 = {};
+        int[] input4 = {5};
+
+        assertEquals("[1, 2, 1, 1, 2, 1]", Arrays.toString(Practice1.getConcatenation(input1)) );
+        assertEquals("[1, 3, 2, 1, 1, 3, 2, 1]", Arrays.toString(Practice1.getConcatenation(input2)) );
+        assertEquals("[]", Arrays.toString(Practice1.getConcatenation(input3)) );
+        assertEquals("[5, 5]", Arrays.toString(Practice1.getConcatenation(input4)) );
+    }
+
 }
