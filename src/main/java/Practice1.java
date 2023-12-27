@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 public class Practice1 {
@@ -243,5 +241,25 @@ public class Practice1 {
         return digits;
     }
 
-
+    /**
+     * LeetCode easy problem #2942: Find Words Containing Character
+     *
+     * This method takes in a string array of "words" and a character to look for.
+     * It looks for the character and if it is in the word, it adds the index of that
+     * word in the original array to an integer arraylist
+     *
+     * @param words String array of individual words
+     * @param x Character to look for in each word
+     * @return arraylist of indices of words in the original array containing the character
+     */
+    public static List<Integer> findWordsContaining(String[] words, char x) {
+        List<Integer> indexList = new ArrayList<>();
+        String inputChar = String.valueOf(x);
+        for (int i = 0; i < words.length; i++) {
+            if(words[i].contains(inputChar)){
+                indexList.add(i);
+            }
+        }
+        return indexList;
+    }
 }//end of Practice1 class

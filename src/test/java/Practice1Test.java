@@ -90,4 +90,15 @@ class Practice1Test {
         assertEquals("[1, 0]", Arrays.toString(Practice1.plusOne(input3)) );
     }
 
+    @Test
+    void findWordsTest(){
+        String[] input1 = {"leet", "code"};
+        String[] input2 = {"abc", "bcd", "aaaa", "cbc"};
+
+        assertEquals(Arrays.asList(0, 1), Practice1.findWordsContaining(input1, 'e'));
+        assertEquals(Arrays.asList(0, 2), Practice1.findWordsContaining(input2, 'a'));
+        assertEquals(Arrays.asList(), Practice1.findWordsContaining(input2, 'z'));
+
+    }
+
 }
