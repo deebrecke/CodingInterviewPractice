@@ -218,5 +218,30 @@ public class Practice1 {
         return notDivisible - divisible;
     }
 
+    /**
+     * LeetCode easy problem #66: Plus One
+     *
+     * This method takes in a large integer represented as an integer array digits, where each digit is represented
+     * by an integer in that spot: digits[i] = i-th digit. It increments the large "integer" by one and returns
+     * the resulting array of digits.
+     *
+     * @param digits int array that represents a large integer
+     * @return array of digits after adding 1 to above "integer"
+     */
+    public static int[] plusOne(int[] digits) {
+        int sizeOfDigits = digits.length-1;
+        for (int i = sizeOfDigits; i >=0 ; i--) {
+            if(digits[i] != 9){
+                digits[i] += 1;
+                return digits;
+            }else{
+                digits[i] = 0;
+            }
+        }
+        digits = new int[digits.length + 1];
+        digits[0] = 1;
+        return digits;
+    }
+
 
 }//end of Practice1 class

@@ -79,4 +79,15 @@ class Practice1Test {
         assertEquals(-15, Practice1.differenceOfSums(5, 1));
     }
 
+    @Test
+    void plusOneTest(){
+        int[] input1 = {1,2,3};
+        int[] input2 = {4,3,2,1};
+        int[] input3 = {9};
+
+        assertEquals("[1, 2, 4]", Arrays.toString(Practice1.plusOne(input1)) );
+        assertEquals("[4, 3, 2, 2]", Arrays.toString(Practice1.plusOne(input2)) );
+        assertEquals("[1, 0]", Arrays.toString(Practice1.plusOne(input3)) );
+    }
+
 }
