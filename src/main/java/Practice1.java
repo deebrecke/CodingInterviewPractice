@@ -192,5 +192,31 @@ public class Practice1 {
         }
         return concatenated;
     }
-}//end of Practice1 class
 
+    /**
+     * LeetCode easy problem # 2894: Divisible and Non-divisible Sums Difference
+     *
+     * This method takes in two ints, n and m. For each number in the range [1, n],
+     * it checks to see if that number is divisible by m. The sums of numbers divisible by m is
+     * then subtracted from the sum of numbers that are not divisible by m.
+     *
+     * @param n int upper bound of range
+     * @param m int what to divide each number by
+     * @return int difference between not divisible and divisible
+     */
+    public static int differenceOfSums(int n, int m) {
+        int divisible = 0;
+        int notDivisible = 0;
+        for (int i = 1; i <= n; i++) {
+            //not divisible
+            if(i % m != 0){
+                notDivisible += i;
+            }else{
+                divisible += i;
+            }
+        }
+        return notDivisible - divisible;
+    }
+
+
+}//end of Practice1 class

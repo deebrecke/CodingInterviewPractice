@@ -72,5 +72,11 @@ class Practice1Test {
         assertEquals("[]", Arrays.toString(Practice1.getConcatenation(input3)) );
         assertEquals("[5, 5]", Arrays.toString(Practice1.getConcatenation(input4)) );
     }
+    @Test
+    void differenceOfSumsTest(){
+        assertEquals(19, Practice1.differenceOfSums(10, 3));
+        assertEquals(15, Practice1.differenceOfSums(5, 6));
+        assertEquals(-15, Practice1.differenceOfSums(5, 1));
+    }
 
 }
