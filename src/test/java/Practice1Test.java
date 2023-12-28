@@ -101,4 +101,13 @@ class Practice1Test {
 
     }
 
+    @Test
+    void subtractProdAndSumTest(){
+        assertEquals(15, Practice1.subtractProductAndSum(234));
+        assertEquals(21, Practice1.subtractProductAndSum(4421));
+        assertEquals(-15, 960);
+
+    }
+
+
 }

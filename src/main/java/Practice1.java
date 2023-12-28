@@ -262,4 +262,24 @@ public class Practice1 {
         }
         return indexList;
     }
+
+    /**
+     * LeetCode problem 1281: Subtract the Product and Sum of Digits of an Integer
+     *
+     * This method takes in an integer number, n and returns the difference between the product
+     * of its digits and the sum of its digits.
+     *
+     * @param n integer number to add and multiply the digits
+     * @return the difference between the product of its digits and the sum of its digits
+     */
+    public static int subtractProductAndSum(int n) {
+        int product = 1;
+        int sum = 0;
+        while (n > 0){
+            sum += n % 10;
+            product *= n % 10;
+            n /=10;
+        }
+        return product - sum;
+    }
 }//end of Practice1 class
