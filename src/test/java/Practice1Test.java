@@ -122,4 +122,15 @@ class Practice1Test {
         assertEquals(6, Practice1.numberOfMatches(7));
     }
 
+    @Test
+    void numGameTest(){
+        int[] input1 = {5, 4, 2, 3};
+        int[] input2 = {2, 5};
+        int[] input3 = {1, 2, 3, 4, 5, 6};
+
+        assertEquals("[3, 2, 5, 4]", Arrays.toString(Practice1.numberGame(input1)) );
+        assertEquals("[5, 2]", Arrays.toString(Practice1.numberGame(input2)) );
+        assertEquals("[2, 1, 4, 3, 6, 5]", Arrays.toString(Practice1.numberGame(input3)) );
+    }
+
 }

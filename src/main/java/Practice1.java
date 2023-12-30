@@ -336,4 +336,26 @@ public class Practice1 {
         return matches;
     }
 
+    /**
+     * Leetcode problem # 2974: Minimum Number Game
+     *
+     * This method takes in an integer array of even length and returns an array with the following rules:
+     * Every round, first Alice will remove the minimum element from nums, and then Bob does the same.
+     * Now, first Bob will append the removed element in the array arr, and then Alice does the same.
+     * The game continues until nums becomes empty.
+     *
+     * @param nums integer array of even length upon which Alice and Bob are "playing"
+     * @return integer array of same length as nums in which the elements have been placed according to the
+     * rules  above
+     */
+    public static int[] numberGame(int[] nums) {
+        int[] returnArray = new int[nums.length];
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i+=2) {
+            returnArray[i] = nums[i + 1];
+            returnArray[i + 1] = nums[i];
+        }
+        return returnArray;
+    }
+
 }//end of Practice1 class
