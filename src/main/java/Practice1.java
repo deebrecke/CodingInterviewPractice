@@ -283,7 +283,6 @@ public class Practice1 {
         return product - sum;
     }
 
-
     /**
      * LeetCode problem # 2160: Minimum Sum of Four Digit Number After Splitting Digits
      *
@@ -310,5 +309,31 @@ public class Practice1 {
         return new2 + new1;
     }
 
+    /**
+     * LeetCode problem # 1688: Count of Matches in Tournament
+     *
+     * This method takes in an integer number of teams in a tournament and determines the number of matches
+     * played according to the following rules:
+     * If the current number of teams is even, each team gets paired with another team.
+     * A total of currentTeams / 2 matches are played, and currentTeams / 2 teams advance to the next round.
+     * If the current number of teams is odd, one team randomly advances in the tournament,and the rest gets paired.
+     * A total of (currentTeams - 1)/2 matches are played, and (currentTeams - 1)/2 + 1 teams advance to the next round.
+     *
+     * @param teams int number of teams playing in the tournament
+     * @return integer total matches played
+     */
+    public static int numberOfMatches(int teams) {
+        int matches = 0;
+        while (teams > 1){
+            if(teams % 2 == 0){
+                matches += teams/2;
+                teams/=2;
+            }else{
+                matches += (teams - 1)/2;
+                teams = (teams -1)/2 +1;
+            }
+        }
+        return matches;
+    }
 
 }//end of Practice1 class

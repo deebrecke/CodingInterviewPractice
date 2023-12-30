@@ -116,5 +116,10 @@ class Practice1Test {
         assertEquals(27, Practice1.minimumSum(1098));
     }
 
+    @Test
+    void numberOfMatchesTest(){
+        assertEquals(13, Practice1.numberOfMatches(14));
+        assertEquals(6, Practice1.numberOfMatches(7));
+    }
 
 }
