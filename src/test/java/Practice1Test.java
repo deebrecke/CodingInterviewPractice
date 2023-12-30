@@ -133,4 +133,17 @@ class Practice1Test {
         assertEquals("[2, 1, 4, 3, 6, 5]", Arrays.toString(Practice1.numberGame(input3)) );
     }
 
+    @Test
+    void equalStringsTest(){
+        String[] string1 = {"a", "bc"};
+        String[] string2 = {"ab", "c"};
+        String[] string3 = {"a", "bc"};
+        String[] string4 = {"a", "cb"};
+        String[] string5 = {"abc", "d", "defg"};
+        String[] string6 = {"abcddefg"};
+
+        assertTrue(Practice1.arrayStringsAreEqual(string1, string2));
+        assertFalse(Practice1.arrayStringsAreEqual(string3, string4));
+        assertTrue(Practice1.arrayStringsAreEqual(string5, string6));
+    }
 }

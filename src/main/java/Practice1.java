@@ -358,4 +358,27 @@ public class Practice1 {
         return returnArray;
     }
 
+    /**
+     * Leetcode Problem # 1662: Check if Two String Arrays are Equivalent
+     *
+     * This method takes in two string arrays and checks to see if the elements in the arrays
+     * represent the same string.
+     * @param word1 string array representing the first string
+     * @param word2 string array representing the second string
+     * @return true if the strings represent by the two string arrays are the same (in order), false otherwise
+     */
+    public static
+    boolean arrayStringsAreEqual(String[] word1, String[] word2) {
+        String firstWord = "";
+        String secondWord = "";
+
+        for (int i = 0; i < word1.length; i++) {
+            firstWord += word1[i];
+        }
+
+        for (int i = 0; i < word2.length; i++) {
+            secondWord += word2[i];
+        }
+        return firstWord.equals(secondWord);
+    }
 }//end of Practice1 class
