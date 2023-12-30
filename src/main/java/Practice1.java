@@ -282,4 +282,33 @@ public class Practice1 {
         }
         return product - sum;
     }
+
+
+    /**
+     * LeetCode problem # 2160: Minimum Sum of Four Digit Number After Splitting Digits
+     *
+     * This method takes in a 4 digit positive integer, creates two new numbers out of the
+     * four digits and returns the minimum possible sum of the two new numbers
+     *
+     * @param num 4 digit int to be split into two numbers
+     * @return the minimum possible sum of the two new numbers
+     */
+    public static int minimumSum(int num) {
+        //create and fill an array with the digits in num
+        int[] digitArray = new int[4];
+        for (int i = 0; i < 4 ; i++) {
+            digitArray[i] = num % 10;
+            num /= 10;
+        }
+        //sort the array ascending
+        Arrays.sort(digitArray);
+        //create the two new numbers and return the sum
+        // note: the leading number should be the first and second smallest
+        //digit in order to make the smallest numbers to add to the smallest sum
+        int new1 = digitArray[0] * 10 + digitArray[2];
+        int new2 = digitArray[1] * 10 + digitArray[3];
+        return new2 + new1;
+    }
+
+
 }//end of Practice1 class

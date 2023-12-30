@@ -109,5 +109,12 @@ class Practice1Test {
 
     }
 
+    @Test
+    void minimumSumTest(){
+        assertEquals(52, Practice1.minimumSum(2932));
+        assertEquals(13, Practice1.minimumSum(4009));
+        assertEquals(27, Practice1.minimumSum(1098));
+    }
+
 
 }
